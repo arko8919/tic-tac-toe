@@ -1,0 +1,27 @@
+// Colors
+$primary: rgb(58, 38, 24); 
+$secondary: rgb(117, 64, 67); 
+$neutral: rgb(154, 136, 115); 
+
+// Basic colors
+$white: rgb(255, 255, 255);
+$black: rgb(23, 22, 20);
+$grey: rgb(55, 66, 61);;
+
+$grey-100: #f8f9fa;
+$grey-200: #e9ecef;
+$grey-300: #dee2e6;
+$grey-400: #ced4da;
+$grey-500: #adb5bd;
+$grey-600: #6c757d;
+$grey-700: #495057;
+$grey-800: #343a40;
+$grey-900: #212529;
+
+// Data for fluid-type(... ) mixin
+$min-width: 320px;
+$max-width: 1700px;
+$min-font: 10px;
+$max-font: 24px;
+$mod-1: 1.1; // mobile
+$mod-2: 1.4; // desktop
