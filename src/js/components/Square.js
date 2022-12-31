@@ -1,9 +1,9 @@
-import React from "react";
+import "./square.scss";
 
-import "./board.scss";
-
-export default class Square extends React.Component {
-  render() {
-    return <button className="square">{/* TODO */}</button>;
-  }
+export default function Square(props) {
+  return (
+    <button className="square" onClick={props.onSquareClick}>
+      {props.value}
+    </button>
+  );
 }
