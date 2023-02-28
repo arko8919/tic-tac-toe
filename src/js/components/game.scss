@@ -1,14 +1,42 @@
+@use '../helpers/index' as *;
+
 .game {
-  ol,
-  ul {
-    padding-left: 30px;
-  }
+  text-align: center;
+}
+
+.back-btn {
+  width: 10rem;
 }
 
 .game-info {
-  margin-left: 30px;
+  height: 20rem;
 }
+.status {
+  margin: 1rem;
+  color: $neutral;
+}
+.history {
+  margin: 1rem;
+  height: 20rem;
+  width: 95%;
 
-.game-board {
-  
+  @include respond-to("huge") {
+    width: 68%;
+  }
+
+  @include respond-to("2k") {
+    width: 55%;
+  }
+
+  ol {
+    list-style: none;
+
+    li {
+      padding: 0.4rem 1rem;
+    }
+
+    button {
+      width: 9rem;
+    }
+  }
 }

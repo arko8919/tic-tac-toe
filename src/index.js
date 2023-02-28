@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './js/App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./js/App";
 
-import './index.scss';
+import "./index.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App/>);
+root.render(<App />);

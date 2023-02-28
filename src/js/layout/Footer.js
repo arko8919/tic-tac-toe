@@ -40,7 +40,7 @@ export default function Footer() {
             Instagram
           </Card.Link>
         </Card.Body>
-        <p className="text-center">@2022 Artur Sas Dunajewski</p>
+        <p className="text-center">@2023 Artur Sas Dunajewski</p>
       </Card>
     </>
   );

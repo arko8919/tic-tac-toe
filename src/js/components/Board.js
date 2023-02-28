@@ -2,7 +2,6 @@ import React from "react";
 import Square from "./Square";
 
 import "./board.scss";
-import calculateWinner from "./calculateWinner";
 
 export default class Board extends React.Component {
  

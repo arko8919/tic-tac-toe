@@ -6,14 +6,21 @@ html {
     box-sizing: border-box;
     font-size: 100%;
     position: relative;
-    height: 100%;
 
     // Responsive font size
     @include fluid-type($min-width, $max-width, $min-font, $max-font);
 }
-body > #root > div {
-    height: 100vh;
-  }
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: space-around;
+    font-family: 'Pacifico', cursive;
+}
+
+
 
 *,
 *:before,

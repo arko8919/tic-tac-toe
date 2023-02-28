@@ -1,0 +1,21 @@
+@use '../helpers/index' as *;
+
+.menu {
+    text-align: center;
+
+    button {
+        width: 10rem;
+        margin-right: 1rem;
+    }
+
+    .play-btn {
+        width: 10rem;
+        margin: 0 auto;
+    }
+
+    .active {
+        background-color:
+            $neutral;
+        border-color: $neutral;
+    }
+}

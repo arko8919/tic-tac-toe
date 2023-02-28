@@ -1,12 +1,13 @@
 // Colors
-$primary: rgb(58, 38, 24); 
-$secondary: rgb(117, 64, 67); 
-$neutral: rgb(154, 136, 115); 
+$primary: rgb(58, 38, 24);
+$secondary: rgb(117, 64, 67);
+$neutral: rgb(154, 136, 115);
 
 // Basic colors
 $white: rgb(255, 255, 255);
 $black: rgb(23, 22, 20);
-$grey: rgb(55, 66, 61);;
+$grey: rgb(55, 66, 61);
+;
 
 $grey-100: #f8f9fa;
 $grey-200: #e9ecef;
@@ -25,3 +26,23 @@ $min-font: 10px;
 $max-font: 24px;
 $mod-1: 1.1; // mobile
 $mod-2: 1.4; // desktop
+
+// Breakpoints map used with mixin respond-to($breakpoints)
+$breakpoints: (
+    "very-small": (min-width: 481px,
+    ),
+    "small": (min-width: 769px,
+    ),
+    "medium": (min-width: 806px,
+    ),
+    "large": (min-width: 1024px,
+    ),
+    "very-large": (min-width: 1366px,
+    ),
+    "huge": (min-width: 1700px,
+    ),
+    "2k": (min-width: 2560px,
+    ),
+    "4k": (min-width: 3000px,
+    ),
+);

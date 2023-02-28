@@ -1,12 +1,15 @@
 @use 'variables' as *;
+@use 'sass:math';
 
 // Function used inside fluid-type mixin which removes unit from number
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, $value * 0 + 1)
 }
 
 // Responsive font size
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+
+  // Returns a string representation of a numbers units
   $u1: unit($min-vw);
   $u2: unit($max-vw);
   $u3: unit($min-font-size);
@@ -18,6 +21,7 @@
       font-size: $min-font-size;
 
       @media screen and (min-width: $min-vw) {
+        // 10px + ( 24 - 10 ) * ((100vw - 320px) / ( 1700 - 320 ) =  10px + 14 * ((100vw - 320px) / 1380 )  
         font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
       }
 
@@ -25,5 +29,23 @@
         font-size: $max-font-size;
       }
     }
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query)=='string',
+      unquote($raw-query),
+      inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  }
+
+  @else {
+    @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }
