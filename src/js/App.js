@@ -76,13 +76,13 @@ export default class App extends React.Component {
                                     onPlayClick={this.handlePlayClick}
                                 />
                             }
-                        ></Route>
+                        />
                         <Route
                             path="/game"
                             element={
                                 <Game opponent={opponent} symbol={symbol} />
                             }
-                        ></Route>
+                        />
                     </Routes>
                 </Router>
 
