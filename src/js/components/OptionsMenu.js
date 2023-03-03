@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 
@@ -67,38 +66,34 @@ export default class OptionsMenu extends React.Component {
             <Container as="main" className="main">
                 <Card className="menu">
                     <Card.Body>
-                        <Card.Title as="h2">Play opponent</Card.Title>
-                        <Button
-                            variant="primary"
-                            className={this.state.computer}
-                            onClick={this.handleComputerClick}
+                        <Card.Title as="h2">Opponent</Card.Title>
+                        <button
+                            className={this.state.computer} 
+                            onClick={this.handleComputerClick}                                         
                         >
                             Computer
-                        </Button>
-                        <Button
-                            variant="primary"
+                        </button>
+                        <button
                             className={this.state.player}
                             onClick={this.handlePlayerClick}
                         >
                             Player
-                        </Button>
+                        </button>
                     </Card.Body>
                     <Card.Body>
                         <Card.Title as="h2">Symbol</Card.Title>
-                        <Button
-                            variant="primary"
+                        <button
                             className={this.state.X}
                             onClick={this.handleXClick}
                         >
                             X
-                        </Button>
-                        <Button
-                            variant="primary"
+                        </button>
+                        <button                          
                             className={this.state.O}
                             onClick={this.handleOClick}
                         >
                             O
-                        </Button>
+                        </button>
                     </Card.Body>
                     <Card.Body className="play">
                         {this.props.errorProfile && (

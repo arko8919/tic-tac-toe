@@ -2,6 +2,11 @@
 
 .menu {
     text-align: center;
+    border: 2px solid $secondary;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
 
     .play {
         position: relative;
@@ -11,6 +16,12 @@
     button {
         width: 10rem;
         margin-right: 1rem;
+        border: none;
+        outline: none;
+        padding: 0.5rem;
+        background-color: $primary;
+        color: $white;
+        border-radius: 0.5rem;
     }
 
     .play-btn {
@@ -19,8 +30,7 @@
     }
 
     .active {
-        background-color:
-            $neutral;
+        background-color: $neutral;
         border-color: $neutral;
     }
 
