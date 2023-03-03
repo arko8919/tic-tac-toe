@@ -73,6 +73,7 @@ export default class App extends React.Component {
                 errorProfile: "",
             });
         }
+        
     }
 
     // Reset values when the player goes back to the options menu

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 import Board from "./Board";
 import calculateWinner from "./calculateWinner";
@@ -18,8 +18,11 @@ export default class Game extends React.Component {
                 },
             ],
             xOnSquare: true,
+            playerSymbol: "",
             stepNumber: 0,
         };
+
+        this.opponent = this.props.opponent;
 
         this.handleJumpTo = this.handleJumpTo.bind(this);
         this.handleBackClick = this.handleBackClick(this);
@@ -27,15 +30,19 @@ export default class Game extends React.Component {
 
     componentDidMount() {
         let symbol;
+        let playerSymbol;
         if (this.props.symbol === "X") {
             symbol = true;
+            playerSymbol = "X";
         }
         if (this.props.symbol === "O") {
             symbol = false;
+            playerSymbol = "O";
         }
 
         this.setState({
             xOnSquare: symbol,
+            playerSymbol: playerSymbol,
         });
     }
 
@@ -57,22 +64,23 @@ export default class Game extends React.Component {
         let newSquares = [];
 
         // Assign an X or O to the square clicked depending on which player it's turn
-        if (this.props.opponent === "friend") {
+        if (this.opponent === "friend") {
             squares[i] = this.state.xOnSquare ? "X" : "O";
             newSquares = squares;
         }
 
-        if (this.props.opponent === "computer") {
-            squares[i] = this.props.symbol;
+        if (this.opponent === "computer") {
+            squares[i] = this.state.playerSymbol;
             const player = {
-                man: this.props.symbol,
-                computer: this.props.symbol === "X" ? "O" : "X",
+                man: this.state.playerSymbol,
+                computer: this.state.playerSymbol === "X" ? "O" : "X",
             };
+
             newSquares = computerDecision(squares, player);
         }
 
         // If the player refreshes the page, it will set the setting to default, where X is a man and the opponent is a computer.
-        if (this.props.opponent === null) {
+        if (this.opponent === null) {
             squares[i] = "X";
             const player = {
                 man: "X",
@@ -125,7 +133,7 @@ export default class Game extends React.Component {
                     history={history}
                     current={current}
                     xOnSquare={this.state.xOnSquare}
-                    opponent={this.props.opponent}
+                    opponent={this.opponent}
                     onJumpTo={this.handleJumpTo}
                 />
                 <Link
