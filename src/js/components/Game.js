@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom"; 
 
 import Board from "./Board";
 import calculateWinner from "./calculateWinner";
 import computerDecision from "./computerDecision";
-import isTie from "./isTie";
 import History from "./History";
 
 import "./game.scss";
@@ -24,6 +22,7 @@ export default class Game extends React.Component {
         };
 
         this.handleJumpTo = this.handleJumpTo.bind(this);
+        this.handleBackClick = this.handleBackClick(this);
     }
 
     componentDidMount() {
@@ -103,6 +102,9 @@ export default class Game extends React.Component {
         });
     }
 
+    handleBackClick() {
+        this.props.onBackClick();
+    }
     render() {
         const history = this.state.history;
         // It assigns board from the history of moves based on the current step
@@ -125,12 +127,11 @@ export default class Game extends React.Component {
                     xOnSquare={this.state.xOnSquare}
                     opponent={this.props.opponent}
                     onJumpTo={this.handleJumpTo}
-
                 />
                 <Link
-                    to="/"
+                    to="/#"
                     className="btn btn-primary back-btn"
-                    onClick="location.reload()"
+                    onClick={this.handleBackClick}
                 >
                     Go Back
                 </Link>

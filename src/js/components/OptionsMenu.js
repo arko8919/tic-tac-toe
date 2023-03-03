@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Alert from "react-bootstrap/Alert";
 
 import "./optionsMenu.scss";
 
@@ -99,7 +100,10 @@ export default class OptionsMenu extends React.Component {
                             O
                         </Button>
                     </Card.Body>
-                    <Card.Body>
+                    <Card.Body className="play">
+                        {this.props.errorProfile && (
+                            <Alert variant="danger" className="alert">{this.props.errorProfile}</Alert>
+                        )}
                         <Link
                             to="/game"
                             onClick={this.handlePlayClick}

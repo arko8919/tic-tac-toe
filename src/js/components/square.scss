@@ -1,3 +1,5 @@
+@use '../helpers/index' as *;
+
 .square:focus {
   outline: none;
 }
@@ -8,15 +10,16 @@
 
 .square {
   background: #fff;
-  border: 1px solid #999;
+  border: none;
+  outline: none;
   float: left;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
-  line-height: 5rem;
-  height: 5rem;
+  line-height: 7.5rem;
+  height: 7.5rem;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 5rem;
-  }
+  width: 7.5rem;
+}
